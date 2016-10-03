@@ -2,6 +2,12 @@ $("li").on("click", function(){
     $(this).toggleClass("completed");
 });
 
+$("span").on("click", function(e){
+    $(this).parent().fadeOut(500,function(){
+        $(this).remove();
+    });
+    e.stopPropagation();
+});
 ////selects list items and attaches click listener
 //$("li").on("click", function(){
 //    //if list item is grey change to black and remove line through
