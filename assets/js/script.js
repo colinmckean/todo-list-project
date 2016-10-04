@@ -16,6 +16,9 @@ $("input[type='text']").on("keypress", function(e){
         $("ul").append('<li><span><i class="fa fa-trash" aria-hidden="true"></i> </span> ' + todoText + "</li>")
     }
 })
+$(".fa-plus-circle").on("click", function(){
+    $("input[type='text']").fadeToggle()
+})
 ////selects list items and attaches click listener
 //$("li").on("click", function(){
 //    //if list item is grey change to black and remove line through
