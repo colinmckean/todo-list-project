@@ -1,13 +1,21 @@
-$("li").on("click", function(){
+$("ul").on("click", "li", function(){
     $(this).toggleClass("completed");
 });
 
-$("span").on("click", function(e){
+$("ul").on("click", "span", function(e){
     $(this).parent().fadeOut(500,function(){
         $(this).remove();
     });
     e.stopPropagation();
 });
+
+$("input[type='text']").on("keypress", function(e){
+    if(e.which === 13){
+        var todoText = $(this).val();
+        $(this).val("");
+        $("ul").append("<li><span>X </span>" + todoText + "</li>")
+    }
+})
 ////selects list items and attaches click listener
 //$("li").on("click", function(){
 //    //if list item is grey change to black and remove line through
